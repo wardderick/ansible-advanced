@@ -1,0 +1,4 @@
+---
+- hosts: testhosts
+  roles:
+    - geerlingguy.ntp
