@@ -1,0 +1,19 @@
+---
+- hosts: testhosts
+  vars:
+  tasks:
+  - name: install httpd via yum
+    yum:
+      name: httpd
+      state: latest
+  - name: start and enable httpd
+    service:
+      name: httpd
+      state: running
+  - name: set index.html
+    template:
+      src: /etc/ansible/index.html.j2
+      mode: 644
+      owner: root
+      group: root
+      dest: /var/www/html/index.html
