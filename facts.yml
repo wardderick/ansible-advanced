@@ -1,0 +1,16 @@
+---
+- hosts: testhosts
+  vars:
+  tasks:
+  - name: Install telnet
+    yum:
+      name: telnet
+      state: installed
+    register: output
+  - debug:
+      msg: "Output of yum command {{ output }}"
+  - set_fact:
+      username: <your name>
+      calc_fact: "{{ 400 % 6 }}"
+  - debug:
+      msg: "Your set username is {{ username }} and the calculated modulo is {{ calc_fact }}"
