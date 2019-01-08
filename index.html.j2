@@ -1,7 +1,7 @@
-<p>My hostname is: {{ ansible_nodename }}</p>
-<p>I have {{ansible_processor_cores }} cores and {{ ansible_processor_threads_per_core }} threads per core</p>
-<p>I have a total of {{ ansible_memtotal_mb / 1024}} GB of RAM</p>
-<p>My owner is {{ username | default('unknown') }}</p>
-<p>My operating system is: {{ ansible_distribution_file_variety }} {{ ansible_distribution_major_version }} {{ ansible_architecture }}</p>
-<p>My IP address is {{ ansible_default_ipv4_address | ipv4}}</p>
-<p>/bin/sh is a link to {{ /bin/sh | realpath }}</p>
+My hostname is: {{ ansible_nodename }}
+I have {{ansible_processor_cores }} cores and {{ ansible_processor_threads_per_core }} threads per core
+I have a total of "{{ ansible_memtotal_mb / 1024 }}" GB of RAM
+My owner is {{ username | default('unknown') }}
+My operating system is: {{ ansible_distribution_file_variety }} {{ ansible_distribution_major_version }} {{ ansible_architecture }}
+My IP address is {{ ansible_default_ipv4.address | ipv4}}
+sh is a link to {{ '/bin/sh' | realpath }}
