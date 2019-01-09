@@ -11,7 +11,7 @@
         rescue:
           - debug:
               msg: 'I caught an error'
-          - name: i force a failure in middle of recovery! >:-)
+          - name: i force a failure in middle of recovery
             command: /bin/false
             ignore_errors: True
           - debug:
