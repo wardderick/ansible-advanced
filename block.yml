@@ -3,12 +3,12 @@
   vars:
   tasks:
     - name: demo block
-        block:
+      block:
           - debug:
               msg: 'I execute normally'
           - name: force a failure
             command: /bin/false
-        rescue:
+      rescue:
           - debug:
               msg: 'I caught an error'
           - name: i force a failure in middle of recovery
@@ -16,6 +16,6 @@
             ignore_errors: True
           - debug:
               msg: 'I execute even when the previous command fails'
-        always:
+      always:
           - debug:
-              msg: "This always executes”
+              msg: "This always executes"
