@@ -1,4 +1,5 @@
 ---
 - hosts: testhosts
+  become: true
   roles:
     - geerlingguy.ntp
